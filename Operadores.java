@@ -161,6 +161,3 @@ public class Operadores {
   == | Igual a
   != | Diferente de
 */
-
-
-
