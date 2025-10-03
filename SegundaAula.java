@@ -5,7 +5,7 @@ public class SegundaAula {
 
 
         /*
-         *  DECLARAÇÃO DE VARIÁVEIS PRIMITIVAS
+          DECLARAÇÃO DE VARIÁVEIS PRIMITIVAS
         */
         // normal
         int idade = 18;
@@ -44,12 +44,12 @@ public class SegundaAula {
         System.out.println("Quantidade de carros: " + carros);
 
         /*
-         * DIFERENTES FORMAS DE LER VALORES
-         * 
-         *  int idade = teclado.nextInt();
-         *  float salario = teclado.nextFloat();
-         *  String nome = teclado.nextLine();
-         * 
+        DIFERENTES FORMAS DE LER VALORES:
+        
+        int idade = teclado.nextInt();
+        float salario = teclado.nextFloat();
+        String nome = teclado.nextLine();
+         
         */
 
         // CASTING => CONVERSÃO DE UM TIPO PARA OUTRO
