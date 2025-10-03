@@ -1,0 +1,851 @@
+ANOTAÇÕES DAS AULAS DE JAVA ☺
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+COMO FUNCIONA O JAVA? ☺
+
+- Como a linguagem "C", Java também vai precisar de um compilador, para que pega o código fonte do Java é transforma em número binário (chamado de bytecode) para depois passar pela JVM, "Java virtual machine" ou "Maquina virtual java".
+
+- existem dois momentos no desenvolvimento de java, basicamente existem pessoas que programão java e pessoa que usam java. Para pessoas que querem apenas usar o java, vão usar o JRE, "Java Runtime environment" ou "Ambiente de execução java". Agora para pessoas que querem programar em java, vão usar o JDK,  "Java Development Kit" ou "Kit de Desenvolvimento Java".
+
+
+	JRE  "Java Runtime environment" ou "Ambiente de execução java"
+
+- é composto de duas parte, a "JVM" e "Bibliotecas"
+
+* A JVM ("Java virtual machine") possui algumas partes internas como:
+
+	- loader and verificador: o loudar é a parte interna do da JVM que vai carregar o bytecode na memória do computador. Ja o verificador vai verificar se esse código é executavel e sem ploblemas
+
+	- Interpretador and gerenciador: interpretador vai pegar o código em bytecode e transformar no código nativo da maquina. Ja o gerenciador de memória vai tratar como os códigos e as variaveis vão ser gerenciadas na memória da JVM
+
+	- Compilador JIT "just in tempo" ou "tradução em tempo real": serve para ter um ganho de performace
+
+* Bibliotecas são APIs que poderão ser usados dentro do programa
+
+--------------------------------------------------------------------------------------------------->
+
+	JDK  "Java Development Kit" ou "Kit de Desenvolvimento Java"
+
+- é composto de quatro parte, a "JRE", "JavaLang", "Javatools" e "IDE"
+
+* O JRE, é o "ambiente de execução java"
+
+* O JavaLang é basicamnete linguagem que vamos usar, linguagem java
+
+* O JavaTools é um conjunto de farramentas variadas, como por exemplo:
+	
+	- JavaC: ele é o compilador java, vai transformar o código fonte em bytecode.
+
+	- Debugger: permite que você verifique com se seu progama está sendo executado em tempo real. Inclusive verificando e testando conteúdos de variáveis ou acesso ao banco de dados.
+
+	- APIs: servem para o desenvolvimento
+
+* A IDE é um ambiente de desenvolvimento integrado que facilitar muito na hora de progamar em java
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PRIMEIRO PROGAMA EM JAVA ☺
+
+- O primeiro comando a ser usado, será o "package" que será representado na primeira linha como: "package primeiroprogama;". 
+
+- Depois na próxima linha, vem o cabeçalho da classe, que é representado como: "public class PrimeiroProgama { }".
+
+	- As chaves " { } " são blocos, e tudo que estão dentro de abre chave e fecha chave, é um bloco. logo intendemos que uma classe em java é um bloco.
+
+- E depois na próxima linha teremos que ter um método principal, que é representado assim: "public static void main(String[] args) { }"
+
+	- Public: é um modificador de acesso. Uma variável, método ou classe marcada com o modificador público pode ser acessada de qualquer lugar no programa. Existem quatro deles em Java: público, privado, protegido e padrão (vazio).
+
+	- static são aqueles para trabalhar com a classe. Os métodos que usam a palavra-chave static em sua declaração só podem trabalhar diretamente com variáveis ​​locais e estáticas.
+
+	- Void: significa que não retorna nenhum valor.
+
+	- Main: representa o ponto inicial do programa.
+
+	- String[] args: é um argumento do método( pode se entender como nome ).
+
+- Então damos a atender que pensando isso de trás pra frente, temos um "Método principal" dentro de uma classe "PrimeiroProgama", que faz parte do pacote "Primeiroprogama"
+
+até agora temos isso:
+
+1° package primeiroprogama;
+2° public class PrimeiroProgama {
+3°     public static void main(String[] args) {        
+4°     }
+5° }
+
+
+
+- Como queremos escrever "hello world" na tela iremos adicionar mais uma linha, que sera nosso print, representado dessa forma "System.out.print("Hello world");".
+
+	* O System signfica sistema, logo qualquer sistema. Como celular, relógio, computador e etc..
+
+	* O out significa saída, logo como se fosse o display do celular, relógio, computador e etc..
+
+	* Ja o print, significa impressão, sendo assim ele vai escrever na tela do usuário a mensagem escrita
+
+- Depois que colocarmos o nosso "System.out.print("Hello world");", nosso código ficara assim:
+
+1° package primeiroprogama;
+2° public class PrimeiroProgama {
+3°     public static void main(String[] args) {        
+4°     System.out.print("Hello world");
+5° 	}
+6° }
+
+- Dessa formal ficaremos com: "Hello world"
+
+
+- Como podemos ver na primeira linha, temos que "primeiroprogama" esta tudo em munúsculas. Ja na segunda linha, temos que em "PrimeiroProgama", as primeiras letras estão em maiúscula. E na quarta linha o "System" começa com a primeira letra maiúscula. tudo isso tem a ver com a tecnica "Camelcase", e java é totalmente case sensitive, logo e sensivel a caíxa ALTA ou caíxa baixa.
+
+	*CAMELCASE*
+
+- Essa tecnica tem algumas regras.. Sempre que tiver a primeira letra em maiúsculas, vai ser ou uma "classe" ou uma "interface"
+	
+	ex: CursoDeJava
+
+- se as primeiras letra for em minúcula e o resto em camelcase, ela pode ser um atriburo, uma variavel ou um método.
+
+	ex de atributo: nomeAluno
+
+	ex de variavel: mediaPrimeiroBimestre
+
+	ex de método: lançarNotaAluno
+
+- se forem palavras so com letras minúculas, ela é o nome do pacote.
+	
+	ex: cursodejava
+
+- se forem palavras so com letras maiúsculas, ela é o valor de uma constante.
+
+	ex: VALOR-DE-PI
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+APRENDENDO SWING AND JAVAFX ☺
+
+- São basicamente Bibliotecas,  que auxilião na hora de progamar
+
+	*BIBLIOTECA SWING*
+
+- Permite a criação de interfaces graficas, pra janelas.
+
+- conceitos importantes que aparecem no código:
+
+- extends: tem a ver com herança. ela herda caracteisticas do JFrame
+
+- private: tem a ver com encapsulamento. Torna as coisas privadas a um objeto
+
+- ActionEvent: tem a ver com evento
+
+- setText: é um método
+
+	*BIBLIOTECA JAVAFX*
+
+- Permite a criação de interfaces graficas, pra janelas. So que tambêm para celulares, tvs etc
+
+- conceitos importantes que aparecem no código:
+
+- implements: são as interfaces
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+COMENTARIOS, TIPOS PRIMITIVOS E MANIPULACÃO DE DADOS ☺
+
+	*COMENTARIOS*
+
+- Podemos usar os comentarios como um forma de comenatar no código. E podemos fazer comentarios assim:
+	
+	- para um linha só, usamos duas barras: //
+
+	- para multiplas linhas, usamos uma barra e um asterisco e logo depois um asterisco e uma barra:/*  */
+
+	- para comentarios de documentação, usamos: /**  */
+
+--------------------------------------------------------------------------------------------------->
+	
+	*TIPO PREMITIVOS*
+
+- temos os 4 tipos, Char, Inteiro, Float e Boolean. que viram QUATRO FAMÍLIAS no java
+
+- temos o tipo int, que podemos declarar de 3 tipos diferentes:
+
+	- faz a declaração e logo em seguida a atribuição: int idade = 2;
+
+	- faz a declaração e também o typecaste por fim a atribuição: int idade = (int) 2;
+
+	- se ultiliza uma clase que chamamos de "Wrapper class", logo é um obj: Integer idade = new Integer(2);  
+
+		- quando temos um new dentro de uma classe, ele estara criando um obj
+
+
+- temos o tipo float, que podemos declarar de 3 tipos diferentes:
+
+	- faz a declaração e logo em seguida a atribuição: float preço = 2.5f;   (o "f" significa que é do tipo float)
+
+	- faz a declaração e também o typecaste por fim a atribuição: float preço = (float) 2;
+
+	- se ultiliza uma clase que chamamos de "Wrapper class", logo é um obj: Float preço = new Float(2);
+
+
+- temos o tipo char, que podemos declarar de 3 tipos diferentes:
+
+	- faz a declaração e logo em seguida a atribuição: char letra = 'J';
+
+	- faz a declaração e também o typecaste por fim a atribuição: char letra = (char) 2;
+
+	- se ultiliza uma clase que chamamos de "Wrapper class", logo é um obj: Caracter letra = new Caracter ('J');
+
+
+- temos o tipo boolean, que podemos declarar de 3 tipos diferentes:
+
+	- faz a declaração e logo em seguida a atribuição: boolean frio = false;
+
+	- faz a declaração e também o typecaste por fim a atribuição: boolean frio = (boolean) false;
+
+	- se ultiliza uma clase que chamamos de "Wrapper class", logo é um obj: Boolean frio = new Boolean (false);
+
+
+* O "Typecast" é usado para expecificar o TIPO de valor especifico.
+	- ex: float exemplo = (float) 17.8;        O "(float)" e a expecificação.
+
+* O "Wrapper Class" é basicamente quando transformamos nossa variavel em um obj.
+	- ex: Caracter exemplo = new Caracter ('E');      O "Caracter" é uma classe e o "new" é um operador que faz o "exemplo" ser um obj
+
+--------------------------------------------------------------------------------------------------->
+
+		*TABELA DOS TIPO DE FAMÍLIA*
+
+		
+		família | tipo primitivo | classe invólucro |    tamnho    | exemplo
+	     -------------------------------------------------------------------------
+	        lógico |     boolean     |     Boolean      |     1 bit    |   true
+	     -------------------------------------------------------------------------
+	      literais |      char       |    Caracter      |     1 bit    |   'J'
+		       |       -         |     String       | 1 byte/ cada | "JAVA"                                * todas as classes invólucros, começam com letra maiúscula 
+	     -------------------------------------------------------------------------
+	               |      byte       |      Byte        |    1 byte    |   127
+	      inteiros |      shot       |      Shot        |    2 bytes   |  32.767
+	               |      int        |     Integer      |    4 bytes   | 2.147.483
+	               |      long       |      Long        |    8 bytes   |   2⁶³
+	     -------------------------------------------------------------------------
+	      reais    |     float       |     Float        |    4 bytes   |  3.4e+³⁸
+                       |     double      |     Double       |    8 bytes   |  1.8e+³°⁸
+	     -------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------->
+
+	*SAÍDA DE DADOS*
+
+- É quando pegamos um dado que esta armazenado na memoria, e mostramos ele de alguma maneira.
+
+- Temos que: float nota = 10f; Podemos mostrar na tela das seguintes formas:
+
+- System.out.print("sua nota é: " + nota);                                                                        * O "+" pode ser usado tanto pra soma quanto pra concatenação
+	- imprime normalmente.
+
+- System.out.println("sua nota é: " + nota);
+	- imprime fazendo quebra de linha.
+
+- System.out.printf("sua nota é: %f", nota);
+	- é um print normal so que com formatação.
+
+- System.out.format("sua nota é: %f", nota);
+	- mesma coisa que o "printf" so com escrita diferente.
+
+--------------------------------------------------------------------------------------------------->	
+
+	*ENTRADA DE DADOS*
+
+- É basicamente todo dado que esta fora do computador e queremos colocar ele dentro dele, ultilizando o teclado.
+
+- O java ja vem com os comandos de saída de dados importados, ja a entrada não. Por isso devemos importala usando o comando: import java.util.scanner
+
+- para intender melhor vamos usar como basse esse código:
+
+1° package tiposprimitivos;
+2° import java.util.Scanner;
+3° public class TiposPrimitivos {
+4°     public static void main(String[] args) {
+5°         Scanner gui = new Scanner(System.in);
+6°         System.out.println("Qual seu nome: ");  
+7°         String nome = gui.nextLine();
+8°         System.out.printf("Seu nome é: " + nome); 
+9°     }
+10° }
+
+- na linha 2°: temos a importação do Scanner que é nossa entrada de dados.
+
+- na linha 5°: como temos que ativar a classe Scanner, teremos que criar um obj, logo utilizamos "new".
+
+	- Scanner gui = new Scanner(System.in);
+
+		- Scanner é a classe.	
+		- "gui" é o nome do obj.
+		- "new" esta criando o obj "gui".
+		- "(System.in)" é oq ele vai ficar munitorando. se System.out é a saída, System.in é a entrada.
+
+- na linha 6°: Vai ser onde digitaremos nossa entrada de dados.
+
+- no exemplo acima ultilizamos entrada de dados do tipo "String", mas também tem essas alguns casos para ler cada tipo:
+
+	- int inteiro = gui.nextInt();
+	- float real = gui.nextFloat();
+	- String str = gui.nesxtLine()
+
+--------------------------------------------------------------------------------------------------->
+
+	*INCOMPATIBILIDADE ENTRE NÚMEROS E STRINGS*
+
+- No java temos uma grande incompatibilidade entre tipos. Vamos considerar a seguinte atribuição:
+
+- int num = 30;
+
+- E digamos que queremos que essa variável num entre em uma string, ficando assim:
+
+- String valor = num;
+
+- Quando escrevemos essa linha, teremos um erro de incompatibilidade, logo o jeito certo de se fazer isso é usando classe involucro usando o método ".toString", que transforma um Integer em String:
+
+- String valor = Integer.toString(valor);
+
+-  se quisermos inventer um numero de String pra Integer, fazemos assim:
+
+- int num = Integer.parceInt(valor);
+
+- O ".parce" significa converter.
+
+	*MÉTODOS ACESSORES*
+
+- Método getter e método setter.
+
+- O método getter significa "pegar o valor que esta dentro".
+
+- O método setter significa "colocar um valor dentro".
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+OPERADORES EM JAVA ☺
+
+- Temos os seguintes operadores:
+
+ + : Soma ou concatenação    %  : Resto da divisão                ordem de precedência: 1° ()
+ - : Subtração                                                                          2° **
+ * : Multiplicação                                                                      3° *, /, // e %
+ / : Divisão                                                                            4° + e -
+
+		Operadores Unários:
+
+ ++ : é um incremento, quando temos " a ++ ", intendemos que é a mesma coisa que " a = a + 1 ".
+
+ -- : é um decremento, quando temos " a -- ", intendemos que é a mesma coisa que " a = a - 1 ".
+ 
+		Operadores de Atribuição
+
+ += : é uma atribicão, então quando temos " a += b ", intendemos que é a mesma coisa que " a = a + b ".
+
+ -= : é uma atribicão, então quando temos " a -= b ", intendemos que é a mesma coisa que " a = a - b ".
+
+ *= : é uma atribicão, então quando temos " a *= b ", intendemos que é a mesma coisa que " a = a * b ".
+
+ /= : é uma atribicão, então quando temos " a /= b ", intendemos que é a mesma coisa que " a = a / b ".
+
+ %= : é uma atribicão, então quando temos " a %= b ", intendemos que é a mesma coisa que " a = a % b ".
+
+
+		Classe Math:
+
+- Como não temos certos operadores em java, temos que usar a classe Math(com "M" maiúsculo) no java.
+
+- Para calcular PI usamos: Math.PI
+
+- Para calcular poténcia usamos: Math.pow(x, y)
+
+- Para calcular raiz quadrada usamos: Math.sqrt(x)
+
+- Para calcular raiz cubica usamos: Math.cbrt(x)
+
+		Arrendondamentos da Classe Math:
+
+- abs: pega o valor absoluto. Então se escrevermos, " Math.abs(-10) ", teremos o resultado "10".
+
+- floor: Faz o Arrendondamento pra baixo. Então se escrevermos, " Math.floor(3.9) ", teremos o resultado "3".
+
+- ceil: Faz o Arrendondamento pra cima. Então se escrevermos, " Math.ceil(4.2) ", teremos o resultado "5".  
+ 
+- round: Faz o Arrendondamento de forma aritmeticamente. Então se escrevermos, " Math.round(5.6) ", teremos o resultado "6".
+ 
+		Números random da classe Math
+
+- O metodo " Math.rondom() " gera um número aleatório entre 0 e 1
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+OPERADORES LOGICOS E RELACIONAIS ☺
+
+- OPERADORES TERNÁRIOS: Ele é um operador especifico para fazer comparações. E ele é representado por " ?: ", vejamos no exemplo a seguir:
+
+1° package operadorternario;
+2° public class OperadorTernario {
+3°     public static void main(String[] args) {
+4° 	   int n1 = 1;
+5°         int n2 = 0;
+6°         int r = n1 < n2 ? 0 : 1 ; 
+7°         System.out.println(r);
+8°     }
+9° }
+
+- Ficaremos com " 1 "
+
+- Na linha 6°: Faz o teste logico, no caso "?" representa "se" e o ":" representa o "se não". Então se 1 for menor que 0 ficaremos com 0, se não, com 1 que no caso é o certo
+
+--------------------------------------------------------------------------------------------------->
+
+		OPERADORES RELACIONAIS:
+
+ < : significa "Menor que". então quando tivermos: 4 é menor que 1 teremos: False. Já se fosse o contrario teríamos: True
+
+ > : significa "Maior que". então quando tivermos: 4 é maior que 1 teremos: True. Já se fosse o contrario teríamos: False
+
+ <= : significa "Menor ou igual a". então quando tivermos: 4 é menor ou igual a 4 teremos: True.
+
+ >= : significa "Maior ou igual a". então quando tivermos: 10 é maior ou igual a 4 teremos: True.
+
+ == : significa "igual a". então quando tivermos: 4 igual a 4 teremos: True.
+
+ != : significa "diferente de". então quando tivermos: 4 é diferente de 10 teremos: True.
+
+--------------------------------------------------------------------------------------------------->
+		
+		*COMPARAÇÃO DE STRING*
+
+- Digamos que queremos comparar duas Strings "String nm1 = 'Guilherme' " e "String nm2 = 'Guilherme' " então:
+  
+	nm1 == nm2 ? "Igual" : "Diferente";  ficaremos com o resultado "Igual".
+ 
+- Já se compararmos "nm1" com a String "String nm3 = new String("Guilherme") " então:
+
+	nm1 == nm3 ? "Igual" : "Diferente";  ficaremos com o resultado "Diferente".
+	
+	- Isso acontece por conta que nosso "nm1" é uma classe e "nm3" é um objeto. Eles só tem o conteúdo igual.
+	
+	- invés de usarmos o operador relacional "==", utilizaremos o METODO " .equals() ". Sua função é ver se a mesma coisa que tem em um objeto, esta no outro. então:
+	
+	nm1.iquals(nm3) ? "Igual" : "Diferente";  ficaremos com o resultado "Igual".
+
+--------------------------------------------------------------------------------------------------->
+	
+	OPERADORES LÓGICOS:
+
+- && : vai testar a clausula do tipo ".E.", então se tivermos "True && False" ficaremos com: False
+
+- || : vai testar a clausula do tipo ".OU.", então se tivermos "False || True" ficaremos com: True
+
+- ^ : vai testar a clausula do tipo ".XOU." que significa "ou exclusivo", então se tivermos "True ^ False" ficaremos com: False
+
+- ! : vai testar a clausula do tipo ".NÃO.", então se tivermos "! False" ficaremos com: True
+
+
+- para melhor entendimento dos operadores lógicos, veremos uma revisão utilizando uma tabela verdade onde teremos duas premissas "p" e "q". fazendo uma analogia, vamos dizer que "p" e igual a "Paula" e que "q" e igual a "Quim" também que "V" é igual a "feliz" e que "F" é igual a "triste".
+
+	- Operador && : Queremos que Paula e(&&) Quim estejam felizes, então:
+
+				p | q | p && q |
+			      ------------------
+				V | V |   V    |
+	 		      ------------------
+				V | F |   F    |
+	 		      ------------------
+				F | V |   F    |
+			      ------------------
+				F | F |   F    |
+			      ------------------ 
+
+	- Operador || : Queremos que Paula ou (||) Quim estejam felizes, então:
+
+				p | q | p || q |
+			      ------------------
+				V | V |   V    |
+	 		      ------------------
+				V | F |   V    |
+	 		      ------------------
+				F | V |   V    |
+			      ------------------
+				F | F |   F    |
+			      ------------------
+
+	- Operador ^ : Queremos que Paula ou (^) exclusivamente Quim estejam felizes, então:
+
+				p | q | p ^ q |
+			      -----------------
+				V | V |   F   |
+	 		      -----------------
+				V | F |   V   |
+	 		      -----------------
+				F | V |   V   |
+			      -----------------
+				F | F |   F   |
+			      -----------------
+
+	- Operador ! : Contem só uma premissa, "p", então se Paula não (!) esta felizes, então:
+
+				p | !p  |
+			      -----------
+				V |  F  |
+	 		      -----------
+				F |  V  |
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ESTRUTURAS DE CONTROLE ☺
+
+- ESTRUTURAS CONDICIONAIS: As estruturas condicionais são blocos de código que permitem tomar decisões com base em condições estabelecidas. Elas são essenciais para a lógica do algoritmo, pois permitem que certas partes do código sejam executadas apenas se determinada condição for verdadeira. Veja a seguir os tipos de condições:
+
+
+	- ESTRUTURA CONDICIONAL SIMPLES: Basicamente vamos ter uma condição só a ser analisada, então se essa condição for verdadeira, vamos ter a execução de uma parte do código, já se ela for falsa, não termos a execução de uma parte do código, veja o exemplo a seguir:
+
+    1° Scanner gui = new Scanner(System.in);
+    2° System.out.println("Digite seu nome: ");
+    3° String nm = nextLine();
+    4° if (nm == "gui"){
+    5°    System.out.print("Parabens man slk");
+    6° }
+
+
+	- Se digitarmos "gui" na nossa entrada de dados, iremos ficar com: "Parabens man slk"
+		Já se não digitarmos "gui", ficaremos com nada de impresso na tela.
+
+--------------------------------------------------------------------------------------------------->
+
+	- ESTRUTURA CONDICIONAL COMPOSTA: Vamos ter duas condições a serem analisadas agora, uma condição false e a outra uma condição verdadeira. Então se essa condição for verdadeira, vamos ter a execução de uma parte do código, já se ela for falsa, teremos a execução outra parte do código, veja o exemplo a seguir:
+
+    1° Scanner gui = new Scanner(System.in);
+    2° System.out.println("Qual sua idade: ");
+    3° int id = gui.nextInt();
+    4° if (id < 18){
+    5°     System.out.println("Menor de idade");
+    6° } else {
+    7°     System.out.println("Maior de idade");
+    8° }
+
+
+	- Se digitarmos qualquer número abaixo de na nossa entrada de dados, iremos ficar com: "Menor de idade"
+			Já se digitarmos algo acima de 18, ficaremos com: "Maior de idade".
+
+--------------------------------------------------------------------------------------------------->
+
+	- ESTRUTURA CONDICIONAL COMPOSTA ENCADEADAS: podemos entender como se fosse um estrutura condicional composta dentro de outra estrutura condicional. Por ex:
+
+  
+    1° Scanner gui = new Scanner(System.in);
+    2° System.out.print("Anos de nascimento: ");
+    3° int id = gui.nextInt();
+    4° int i =  2015 - id;
+    5° if (i < 16) {
+    6°     System.out.println("Não vota");
+    7° } else { 
+    8°     if ((i >= 16 && id < 18) || (i > 70)){
+    9°         System.out.println("Opcional");
+    10°    } else {
+    11°        System.out.println("Voto obrigatório");
+    12°    }
+    13°}
+
+
+	- Basicamente vamos ter 3 tipos de resposta e a opção "Opcional" tem dois casos, por isso Usamos mais uma estrutura condicional composta. Para simplificar essa estrutura podemos usar o "else if {}". veja o exemplo:
+
+
+    1° Scanner gui = new Scanner(System.in);
+    2° System.out.print("Anos de nascimento: ");
+    3° int id = gui.nextInt();
+    4° int i =  2015 - id;
+    5° if (i < 16) {
+    6°     System.out.println("Não vota");
+    7° } else if ((i >= 16 && id < 18) || (i > 70)) {
+    9°         System.out.println("Opcional");
+    10° } else {
+    11°        System.out.println("Voto obrigatório");
+    12°  }
+    13°}
+
+--------------------------------------------------------------------------------------------------->
+
+	- ESTRUTURA CONDICIONAL SWITCH: é uma forma de seleção múltipla. Ela avalia uma expressão e executa diferentes blocos de código com base no valor resultante da expressão, de forma mais eficiente. veja as seguir:
+
+
+    1° Scanner gui = new Scanner(System.in);
+    2° System.out.print("Escolha um número e saiba o que você é:");
+    3° int perna = gui.nextInt();
+    4° String tipo = "";
+    5° switch (perna) {
+    6°     case 1:
+    7°         System.out.println("Feio");
+    8°         break;
+    9°     case 2:
+    10°        System.out.println("Bunito");
+    11°         break;
+    12°    default:
+    13°        System.out.println("Sla");
+    14° }
+
+
+	- Dependendo do número escolhido teremos algum dos casos.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ESTRUTURAS DE REPETIÇÃO ☺
+
+
+- Basicamente permitem a execução de um bloco de código múltiplas vezes, até que uma condição específica seja atendida. E existem alguns tipos de estrutura de repetição, veja as seguir.
+
+	ESTRUTURA DE REPETIÇÃO WHILE
+
+- A estrutura de repetição while executa um bloco de código repetidamente enquanto uma condição é verdadeira. O loop só para quando a condição se torna falsa. Veja o exemplo as seguir:
+
+    1° Scanner gui = new Scanner(System.in);
+    2° String senha = "gatinho123";
+    3° String res = "";
+    4°     while (!senha.equals(res)) {
+    5°         System.out.print("Digite a senha certa: ");
+    6°         res = gui.nextLine();
+    7°         System.out.println("Feio");
+    8°         if (!res.equals(senha)) {
+    9°             System.out.println("Senha incorreta");
+    10°        } else {
+    11°            System.out.println("Senha Correta");
+    12°        }
+	13°     }    
+
+
+- Se a resposta digitada for Diferente da senha definida, ficaremos em loop até colocarmos a resposta correta, que no caso é "gatinho123".
+
+	MODIFICADORES DE LAÇO
+
+- modificadores de laço servem para alterar o funcionamento da repetição. como por exemplo:
+	
+	- Modificador "continue": interrompe a iteração atual de um loop e pula para a próxima, no caso a primeira iteração do repetição, sem encerrar o loop completo.
+
+	- Modificador "break": invez de continuar a iteração, o break saí do laço, assim encerrando o loop.
+
+--------------------------------------------------------------------------------------------------->
+
+ESTRUTURA DE REPETIÇÃO DO-WHILE
+
+- Faz a mesma função que a estrutura de repetição while. A única diferença é que a condição a ser avaliada vai vir depois da execução do bloco. E também no laço do-while o bloco é executado ao menos uma vez, independentemente da condição. É já no laço while o bloco pode nunca ser executado se a condição inicial for falsa. Veja no exemplo:
+
+
+	- Contador de cambalhotas:
+
+	1° public static void main(String[] args) {
+	2°     int cc1 = 0;
+	3°     do {
+	4°         System.out.println(cc);
+	5°         cc1 += 1;
+	6°     } while (cc1 == 4);
+	7°     
+	8°     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+	9°     
+	10°    int cc2 = 0;
+	11°    
+	12°    while (cc2 == 4) {
+	13°        System.out.println(cc2);
+	14°        cc2 += 1;
+	15°    }
+	16° }
+
+	- Da linha 1° a linha 7° temos A estrutura de repetição do-while, Ela vai ser executada apenas uma vez por conta que a condição sendo verificada é falsa, então só vamos ter a impressão do número "0".
+
+	- Da linha 9° a linha 16° temos A estrutura de repetição while, Ela vai não ser executada nem uma vez por conta que a condição sendo verificada é falsa, então não vamos ter nem uma impressão na tela.
+
+--------------------------------------------------------------------------------------------------->
+
+ESTRUTURA DE REPETIÇÃO FOR 
+
+- É quase um while, mas a principal diferença é que ela é mais usada para iterações pré-determinadas, um número de laços já definidos. veja as seguir: 
+
+	- imprimindo 4 "Olá Mundo" na tela:
+
+	1°  public static void main(String[] args) {
+	2°      for (int i = 0; i < 4; i+=1) {
+	3°          System.out.println("Olá Mundo " + (i+1));
+	4°      }
+	5°  }
+
+		- Ficaremos com: "Olá Mundo 1", "Olá Mundo 2", "Olá Mundo 3" e "Olá Mundo 4".	
+
+
+	- Na linha 4°: Define-se manualmente o início (int i = 0), a condição de parada (i < 4) e a razão (i++). É como se fosse um "range" do Python
+		
+
+- Também podemos definir o inicio e a razão, por exemplo:
+
+	1°  public static void main(String[] args) {
+	2°      for (int i = 1; i < 10; i+=2) {
+	3°          System.out.println("Olá Mundo " + (i+1));
+	4°      }
+	5°  }
+
+		- Ficaremos com: "Olá Mundo 2", "Olá Mundo 4", "Olá Mundo 6", "Olá Mundo 8", "Olá Mundo 10".
+
+
+--------------------------------------------------------------------------------------------------->
+
+- Então para entendermos as principais diferenças entre While e For, podemos ver na tabela as seguir:
+
+Aqui está a tabela formatada no estilo solicitado:  
+
+
+		Aspecto            | while                                | for
+		------------------------------------------------------------------------------------------------------
+		Condição de parada | Baseada em uma condição lógica.      | Baseada em uma sequência ou iteração fixa.
+		------------------------------------------------------------------------------------------------------
+		                   | Quando o número de iterações é       | Quando o número de iterações é conhecido 
+		Uso típico         | desconhecido ou depende de eventos   | ou ao iterar sobre sequências.
+		                   | externos.                            |
+		-------------------------------------------------------------------------------------------------------
+		Controle manual    | Necessita de controle explícito da   | O controle da iteração é automático.
+		                   | variável de iteração.                |
+		-------------------------------------------------------------------------------------------------------
+			           | Entrada de usuário ou checagem       | Iterar por listas, strings, ou executar 
+		Exemplo prático    | contínua (ex.: enquanto não for      | código N vezes.
+                		   | igual a X).                          |
+		-------------------------------------------------------------------------------------------------------
+
+
+-  ☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺ só pra não ficar com a formatação feia sksks ☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+VARIAVEIS COMPOSTAS (ARRAY) ☺
+
+- Um vetor (ou array) é uma estrutura de dados que permite armazenar uma coleção de elementos do mesmo tipo. Cada elemento pode ser acessado diretamente por um índice numérico, que começa em 0.
+
+- Diferente de uma lista, o tamanho de um vetor é fixo, ou seja, não pode ser alterado após a sua criação.
+
+- Temos dois jeitos de criar um Array. A Declaração e inicialização direta e também A Declaração e inicialização separada.
+
+	- Declaração e inicialização direta: Permite declarar e atribuir valores ao array no mesmo momento, sem precisar usar new.
+
+		- Exemplo: int num[] = {10, 20, 30, 40, 50};    ou para string: String[] cores = {"Vermelho", "Azul", "Verde", "Amarelo"};
+	
+
+	- Declaração e inicialização separada: O array é declarado primeiro, e depois inicializado utilizando o operador new para definir seu tamanho.
+
+		- exemplo: Começamos declarando o array: int[] numeros = new int[4];    logo em seguida atribuímos os valores individualmente: numeros[0] = 10;  numeros[1] = 20;  numeros[2] = 30;
+
+- Podemos ver um exemplo de Array as seguir:
+
+	1° public class MesEosDias {
+	2°     public static void main(String[] args) {
+	3°         	
+	4°         // exemplo de uso de Array
+    	5°         
+   	6°         String mes[] = {
+    	7°             "Janeiro", "Fevereiro", "Março", "Abril", 
+    	8°             "Maio", "Junho", "Julho", "Agosto", 
+    	9°             "Setembro", "Outubro", "Novembro", "Dezembro"
+    	10°         };
+    	11°         
+    	12°         int dias[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};                                   - " .lenght " é a mesma coisa que um len de elementos
+    	13°         
+    	14°         for (int m = 0; m < mes.length; m += 1) {
+    	15°             System.out.printf("O mês %s tem %d \n", mes[m], dias[m]);
+    	16°         }
+    	17°     }
+    	18° }
+
+
+- Outro método de usar imprimir o Array é usando "for each". Que é uma forma simplificada de iterar sobre elementos arrays.
+
+- Basicamente vamos ter uma variável que recebe, a cada iteração, o valor atual do array. Assim não é necessário gerenciar índices manualmente
+
+- veja o exemplo:
+
+	1° public class Main {
+    	2°     public static void main(String[] args) {
+    	3°         int numeros[] = {10, 20, 30};
+    	4°         
+    	5°         // Usando for-each
+    	6°         for (int numero : numeros) {
+    	7°             System.out.println("Número: " + numero);
+    	8°         }
+    	9°     }
+    	10° }
+
+		
+			- termos a Saída igual a:  Número 10, Número 20, Número 30 
+
+
+
+
+- Basicamente as Arrays são usadas em: Armazenar dados que têm tamanho fixo e não mudam frequentemente. E em aplicações que exigem acesso rápido por índice, como algoritmos numéricos ou de busca.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MÉTODO ☺
+
+
+- Um método em Java é um bloco de código que executa uma tarefa específica ou retorna um valor. E para declararmos um método fazemos da seguinte forma:
+
+- método que não retorna um valor:
+
+	1° void soma(int a, int b) {
+    	2°     int s = a + b;
+    	3°     System.out.print(s);
+    	4° }        
+    	5° soma(1,1);
+    	
+ - linha 1°: " void " indica que vai ser um método que não ira ter retorno. " soma " é o nome do meu método. " (int a, int b) " é o parâmetro 
+
+ - linha 2°: Agora declaramos " s " como tipo int, que ira receber " a + b "
+
+ - linha 3°: imprimimos na tela
+
+ - linha 5°: mostra o valor da soma entre 1 e 1 
+
+
+ - Quando vamos fazer o teste no "método main" temos que colocar o "static" antes do void, por conta de estarmos trabalhando com um classe.
+
+	1° public class MetodoSemRetorno {
+	2° 
+	3°     static void soma(int a, int b){
+	4°         int s = a + b;
+	5°         System.out.println(s);
+	6°     }
+	7°     
+	8°     public static void main(String[] args) {
+	9°         soma(1, 1);
+	10°         	
+	11°     }
+	12° }
+
+		
+		- Vamos ter na tela " 2 "
+
+- Agora falando de método que "retornam" um valor, nos podemos chama-los de funções. 
+
+- método que retorna um valor:
+
+	1° public class MetodoComRetorno {
+	2°     
+	3°     static int somar(int a , int b){
+	4°         int s = a + b;
+	5°         return s;
+	6°     }
+	7°     public static void main(String[] args) {
+	8°         int sm = somar(1, 1);
+	9°         System.out.println(sm);
+	10°     }
+	11° }
+
+
+ - linha 3°: Agora colocamos " int " no lugar de " void ", para indicar o tipo de retorno.
+
+ - linha 4°: Declaramos " s " como tipo int, que ira receber " a + b " igual no método sem retorno.
+
+ - linha 8°: Para chamar a função temos varias formas, uma delas é a de atribuímos o valor de retorna a variável, no caso a variável " s "
+
+ - linha 5°: mostra o valor do retorno na variável, no caso a soma entre 1 e 1 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FIM DAS ANOTAÇÕES DE JAVA ☺
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
